@@ -1,32 +1,29 @@
+	// Introductory21.cpp - Displays the average stock price
+	// Revised by Khalid Sirelkhtim on 7/29/24
 
-//Introductory21.cpp - Displays the average stock price
-//Revised by <Khalid Sirelkhtim> on <7/29/24>
+	#include <iostream>
+	#include <iomanip>
+	using namespace std;
 
-#include <iostream>
-#include <iomanip>
-using namespace std;
+	double getAverage(double prices[], int numElements);
 
-//function prototypes
-double getAverage(double prices[], int numElements);
+	int main()
+	{
+			double prices[10] = {96.5, 100.5, 100.5, 100.5, 99, 99, 99, 100, 98.5, 98.9};
+			double average = 0.0;
+			average = getAverage(prices, 10);
 
-int main()
-{
-	double prices[10] = {96.5, 100.5, 100.5, 100.5, 99, 99, 99, 100, 98.5, 98.9};
-	double average = 0.0;
+			cout << fixed << setprecision(2);
+			cout << "Average stock price: $" << average << endl;
 
-	average = getAverage(prices, 10);
-	cout << fixed << setprecision(2);
-	cout << "Average stock price: $" << average << endl;
-	return 0;
-}	//end of main function
-
-double getAverage(double prices[], int numElements)
-{
-	double total = 0.0;
-
-	for (int x = 0; x < numElements; x += 1)
-		total += prices[x];
-	//end for
-	return total / numElements;
-
-
+			return 0; // End of main function
+	}
+	double getAverage(double prices[], int numElements)
+	{
+			double total = 0.0;
+			for (int x = 0; x < numElements; ++x)
+			{
+					total += prices[x];
+			}
+			return total / numElements;
+	}
